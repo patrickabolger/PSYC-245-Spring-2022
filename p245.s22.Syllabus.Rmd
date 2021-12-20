@@ -1,0 +1,684 @@
+---
+title: |
+  ![](images/TAM-PrimaryMarkA.png){width=75%}  
+  Syllabus for PSYC 245:
+subtitle: |
+ Introduction to Psychological Science Methods (Spring 2022)
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
+output: 
+  rmdformats::downcute:
+    use_bookdown: true
+---
+
+<!-- Alternative YAML header for non-html -->
+<!-- --- -->
+<!-- title: | -->
+<!--   ![](images/TAM-PrimaryMarkA.png){width=75%}   -->
+<!--   Syllabus for PSYC 245: -->
+<!-- subtitle: | -->
+<!--  Introduction to Psychological Science Methods (Fall 2021) -->
+<!-- output:  -->
+<!--   word_document: default -->
+<!--   html_document: -->
+<!--     df_print: paged -->
+<!--   pdf_document: default -->
+<!-- --- -->
+
+<!-- Setup -->
+
+```{r setup, include=F}
+knitr::opts_chunk$set(
+	echo = F,
+	message = FALSE,
+	warning = FALSE,
+	comment = NA
+)
+```
+  
+```{r LoadPackages, include=F}
+#if(!require(pacman)){install.packages("pacman");require(pacman)} # un-comment and run this if the 'pacman' package is not installed. It's required for the function below.
+pacman::p_load(dplyr, knitr, magrittr, kableExtra, readr, tibble, tidyr, pander)
+```
+
+
+# COURSE OVERVIEW {#Overview}
+
+<!-- Course Info -->
+
+```{r}
+CourseInfo <- read_tsv("tables/CourseInfo.tsv", na="") 
+LeaderInfo <- read_tsv("tables/LeaderInfo.tsv", na="") 
+```
+
+## Course Information
+
+```{r CourseInfoHtml, eval=T}
+
+CourseInfo %>%
+  kbl(caption = "Section Information for PSYC 245 taught by Dr. Patrick Bolger") %>%
+  row_spec(0:0, bold = T, color = "white", background = "#500000") %>%
+  kable_styling(bootstrap_options = "responsive", font_size=14, full_width = F, position = "left")
+
+```
+
+
+<!-- Only one of the code chunks above and below can be run. The one that is run should have eval=T as a code-chunk option, whereas the other should have eval=F. Above is for html only. Below is for everything else.-->
+
+
+```{r CourseInfo, results = 'asis', eval = F}
+
+pandoc.table(CourseInfo, style = "multiline", split.table = Inf, missing = "")
+
+```
+
+
+## People
+
+```{r LeaderInfoHtml, eval=T}
+
+# Removed headers unnecessary in html table
+#PeopleInfo2 <- PeopleInfo %>% select(1,4:7)
+
+LeaderInfo %>% 
+  kbl(caption = "People") %>%
+  pack_rows("Main Instructor", 1, 1, background = "#D6D3C4") %>%
+  pack_rows("Undergraduate Teaching Scholar", 2, 2, background = "#D6D3C4") %>%
+  row_spec(0:0, bold = T, color = "white", background = "#500000") %>%
+  kable_styling(bootstrap_options = "responsive", font_size=14, full_width = F, position = "left")
+
+```
+
+<!-- Only one of the code chunks above and below can be run. The one that is run should have eval=T as a code-chunk option, whereas the other should have eval=F. Above is for html only. Below is for everything else.-->
+
+
+```{r LeaderInfo, results = 'asis', eval = F}
+
+pandoc.table(LeaderInfo, style = "multiline", split.table = Inf, missing = "")
+
+```
+
+
+$\dagger$ Exceptions are during the week of 6-10 September, when Dr. Bolger will hold office hours on Monday, 6 September, from 10am-12pm, and during the week of 4-8 October, when he will also hold office hours on Monday, 4 October, from 10am-12pm.
+
+$\dagger\dagger$ See the end of this syllabus for more information on online student hours
+
+```{r CoursePoints}
+
+## THESE NEED TO BE CHANGED
+
+# Exam 1
+A1 <- 120 # Points per exam
+B1 <- 1 # Number of exams
+
+# Exam 2
+A2 <- 120 # Points per exam
+B2 <- 1 # Number of exams
+
+# Exam 3
+A3 <- 130 # Points per exam
+B3 <- 1 # Number of exams
+
+# Final Exam
+A4 <- 140 # Points per exam
+B4 <- 1 # Number of exams
+
+# Exam sum
+A_sum <- sum(A1*B1,A2*B2,A3*B3,A4*B4)
+
+# Easier Learning Curves
+C <- 10 # Points per easier Learning Curve activity
+D <- 19 # Number of easier Learning Curve activities
+
+# Harder Learning Curves
+E <- 20 # Points per harder Learning Curve activity
+G <- 3 # Number of harder Learning Curve activities
+
+# Easier Post-class quizzes
+H <- 10 # Points per easier post-class quiz
+I <- 18 # Number of easier post-class quizzes
+
+# Harder Post-class quizzes
+J <- 20 # Points per harder post-class quiz
+K <- 3 # Number of harder post-class quizzes
+
+# POINT TOTALS
+N <- sum((A1*B1),(A2*B2),(A3*B3),(A4*B4),
+         (C*D),(E*G),(H*I),(J*K)) # For the entire class
+R <- sum((C*D),(E*G),(H*I),(J*K)) # Reading quizzes
+
+```
+
+---
+
+# COURSE DETAILS 
+
+## Description
+
+This course is the **first** of three course in the *Psychological & Brain Sciences* major that explain how psychological science is carried out. Psychological science is an extraordinarily diverse, academic field, where researchers collect data ranging from reaction times, to brainwaves, to eye movements, to survey/polling data, to biochemical reactions, to the sheer counting of behaviors or even words on the internet (and more!). 
+
+To get a broad-based education in psychological science then, you need to get used to thinking critically about data. The main focus in this introductory course, therefore, is an overview of the general data-collection and data-analysis processes in the social sciences and psychology, but without emphasizing very much math, per se (though there will be a little bit of math). 
+
+As such, it may be one of the most useful general-purpose classes that you take at the university. This is because you are bombarded every day by data and simple statistics, be it on the news, in print media, or via social media. Much of this data is summarized or presented very poorly (often deliberately so), yet there is no time to analyze it mathematically; rather, you need to digest it quickly and critically. 
+
+Thus, the goal here is to advance your capabilities as critical consumers of data in this class, resulting in students ultimately who not only can "defend themselves" against quantitative chicanery, but also are ready to start analyzing data in a more formal way (via mathematics) in *PSYC 301* (*Elementary Statistics for Psychology*), as well as its subsequent counterpart, *PSYC 302* (*Experimental Psychology*).
+
+## Meetings
+
+Tuesdays and Thursdays from 11:10 am to 12:25 pm in CHEM 100. 
+
+There is no credit for attendance in this class at any point, and the class lectures will be made available synchronously and asynchronously for students who may have to quarantine or who are otherwise indisposed.
+
+Exams are also "take-home" (online).
+
+Thus, you will be able to access course content and get credit for all activities whether you are physically in the class or not.
+
+This is a face-to-face class, however. We meet in a physical space at a specific time. See above.
+
+And due to the need for contact-tracing at the University, we have been encouraged to have assigned seating. This will be figured out on the first day of class.
+
+## Prerequisites  
+
+None
+
+## Course Catalog Description  
+
+If you are interested for some reason, the [description from the Undergraduate Course Catalog](https://catalog.tamu.edu/undergraduate/course-descriptions/psyc/) is quoted below.
+
+> *Introduction to Psychological Science Methods*. (3-0). Credit 3. Basic elements of statistics and research methods in the psychological and brain sciences; topics include ethics in psychological research, measurement, research design and descriptive and inferential statistics.
+
+## Learning outcomes at the course-content level
+
+The following fifteen learning outcomes reflect the knowledge that student will have by the end of the course. These outcomes will be measured on not only exams but also both pre- and post-class reading quizzes.
+
+### Part 1: Data integrity
+
+This will include an understanding of the following:
+
+- `LO1`: ***Measurement*** (constructs, operationalization, reliability, validity)  
+- `LO2`: ***Inferencing*** (i.e., from samples to populations)  
+- `LO3`: ***Research Design*** (i.e., observations, experiments)  
+
+### Part 2: Summarizing data
+
+This will include an understanding of the following:
+
+- `LO4`: ***Data visualization*** (histograms, densities, boxplots, scatterplots)  
+- `LO5`: ***Mean and variance*** (averages, variance)  
+- `LO6`: ***Theoretical distributions***   
+
+### Part 3: Probability
+
+This will include an understanding of the following:
+
+- `LO7`: ***Probability*** (personal probability, likelihood, odds)  
+- `LO8`: ***Risk***  
+- `LO9`: ***Sampling distributions***  
+- `L10`: ***Simulation***  
+- `L11`: ***Expected values / estimation***  
+
+### Part 4: Inference & Ethics
+
+This will include an understanding of the following:
+
+- `LO12`: ***Null hypothesis significance testing***  
+- `LO13`: ***p-values***  
+- `LO14`: ***confidence intervals***  
+- `L015`: ***Research ethics***  
+
+## Learning outcomes at the university level
+
+Texas A&M University has identified [student learning outcomes](https://catalog.tamu.edu/undergraduate/general-information/student-learning-outcomes/) that describe our institutional commitment to your educational goals. They are listed below (in shortened form), along with the dimension of that learning outcome that applies most closely to this class (in boldface italics), and an explanation of how this class meets that learning outcome. 
+
+Note however, that most of these six university outcomes are not directly measurable outcomes in this particular course. They are more like broad entailments.
+    
+### Knowledge of Degree 
+
+Both psychological and brain sciences have become very, very quantitative over the years, to the point where it is rare to find qualitative studies without statistics (other than pure reviews). For this reason, it is critical to orient you to this way of thinking. This course is the first step in that direction. 
+
+Thus, we have our first learning outcome, `LO16`: ***Knowledge of the importance of quantification in psychology***. By the end of the course, you should have a good idea about the pervasiveness and nature of numbers as you encounter them in primary research in psychological and brain sciences. This outcome is measurable, but it is a summary of the learning outcomes in the section above.
+
+### Critical Thinking  
+
+There is a great deal of data that you encounter on an informal, daily basis through visual/aural and print media. Likewise, there are many ways to deceive unwary consumers of this data. 
+
+This brings us to the next learning outcome, `LO17`: ***Critical thinking***. In this class, you will learn to defend yourself against any such deception. You will learn the basics of data collection, data summaries, probability, and inferential statistics to become confident in evaluating almost any kind of "everyday" data.  
+
+### Personal/Social Responsibility  
+
+The next learning outcome, `LO18`, is ***choosing ethical courses of action in research and practice***.
+
+You will consider how data should be collected, presented, and interpreted in an ethical manner. By the end of this course, you will learn about the importance of transparency in conducting and reporting statistical analyses. 
+
+### Social/Cultural/Global competence
+
+The modern world is very diverse, but it is important that we communicate with each other using tools that we mutually understand. Science is the one of the most important such tools (if not **the** most important tool). And engaging in science is almost impossible without some quantitative background.
+
+This brings us to the next learning outcome, `LO19`: **Live and work effectively in a diverse and global society**. By the end of this course, you should be able to "converse" at a basic level in one of the common "languages" that allow us to communicate about information, despite our diversity: statistics.
+
+### Lifelong learning
+
+One way to facilitate lifelong learning is to learn the foundations of statistics. As stated above, we are inundated with quantitative information on a daily basis through visual/aural and print media. Having an understanding of how that quantitative data works (or should work) will make further learning easier, and therefore more attractive in the long run. 
+
+Thus, the next learning outcome, `LO20` is **exhibit the skills necessary to acquire, organize, reorganize, and interpret new knowledge**. By the end of this course, you should also have a keener interest in analyzing quantitative information when you encounter it (which is always *often* in the industrialized world).
+
+### Collaboration
+
+Many of the issues covered in this textbook (and therefore in this class) are current events in the social sciences. People will have different opinions. Statistics does not usually give a "final" answer. Critical thinking and interpretation are always involved. Since this is the case, your classmates will inevitably generate different ideas from the same data. 
+ 
+This brings us to the final learning outcome, `LO21`: **Consider different points of view**. Working together with your fellow students and understanding their point of view will be an integral part of this course By the end of it, you should have a stronger grasp of the validity of differing opinions and how to agree or even agree to disagree politely. 
+
+---
+
+# COURSE TASKS
+
+## Exams
+
+There will be `r sum(B1,B2,B3,B4)` exams. They increase in points as the semester progresses. Exam 1 is worth `r A1` points; Exam 2 is worth `r A2` points; Exam 3 is worth `r A3` points, and the final exam is worth `r A4` points. These sum to `r A_sum` points, or `r paste0(round((A_sum/N)*100,0),"%")` of your total grade). 
+
+Exams will consist of multiple-choice questions, but sometimes calculations are necessary.
+
+These exams will all be online through the [Respondus Lockdown Browser](https://web.respondus.com/he/lockdownbrowser/). 
+
+The *Respondus Lockdown Browser* is a browser that shuts down all your other applications on that computer while you take exams. You need to download it. You will need to do the following during exams:  
+
+  - verify your student ID$^{\dagger\dagger}$  
+  - record the exam with your webcam  
+
+The first three exams will be due within 1 class meeting of the end of the respective unit. The final exam has a specific date.  
+
+The first three exams will have a 1-hour limit, once started in the *Lockdown Browser*. The final exam will have a 2.5-hour limit. 
+
+$\dagger\dagger$ If you do not have access to your student ID for whatever reason, you can log in to the *Howdy Portal* and click on the ***My Profile*** tile. In the top right corner, you will see you ***Aggie Card photo*** along with your full ***name*** and ***UIN***. You can take a screenshot of this display with your smart phone or print it out in order to present for online classes and exams. 
+
+## *Learning Curve* quizzes
+
+There will be `r D+G` *Learning Curve* quizzes. 
+
+The Learning Curves for the first `r D` (Chapters 1-15 & 17-20)$^{\dagger\dagger}$ are relatively easy, each being worth `r C` points. 
+
+The last `r G`, however, are conceptually harder and are worth `r E` points. 
+
+All together, these sum to `r (C*D)+(E*G)` points, or `r paste0(round((sum((C*D),(E*G))/N)*100,0),"%")` of your total grade). 
+
+*Learning Curve* quizzes must be completed **before the relevant class starts**. See the schedule in Canvas for details.
+
+*Learning Curve* quizzes are scored in an interesting way. If you provide incorrect answers, *Achieve* just makes you answer more questions, so it takes longer. But once you get to the target, you get full credit. If you don't reach the full target, you get no credit. It's low-stakes, but it's all or nothing.
+
+There is no time limit to completing these other than the deadline.
+
+$\dagger\dagger$ We are not covering Chapter 16 (which concerns the *Consumer Price Index* because it is too unrelated psychological and brain sciences). We also cover Chapter 7 at the end of the semester.
+
+## Post-Class quizzes
+
+There will be `r I+K` Post-Class quizzes. 
+
+*Almost* exactly parallel to the *Learning Curve* quizzes, the first `r I` (Chapters 1-15 & 17-20)$^{\dagger\dagger}$ are relatively easy, each being worth `r H` points. 
+
+The last `r K` (Chapters 21-23),$^{\dagger\dagger\dagger}$ however, are conceptually harder and are worth `r J`. 
+All together, these sum to `r (H*I)+(J*K)` points, or `r paste0(round((sum((H*I),(J*K))/N)*100,0),"%")` of your total grade). 
+
+*Post-Class quizzes* quizzes must be completed **within one week** of the end of the relevant class. See the schedule in Canvas for details.
+
+The post-class quizzes are scored differently than the *Learning Curve* quizzes. Specifically, they are not "all or nothing." Rather, they are penalized. So if you answer the question wrong, you can re-take the question, but you lose 20% of the value of the question. After 5 mistakes, it's worth zero points (penalized 100%). There are multiple questions. On most of the post-class quizzes, there are around 10-15 questions.
+
+There is no time limit to completing these other than the deadline. You can submit the quizzes late, even, but they lose 25% of their total value for each day late.
+
+$\dagger\dagger$ We are not covering Chapter 16 (which concerns the *Consumer Price Index* because it is too far afield from psychological and brain sciences)
+$\dagger\dagger\dagger$ Due to time constraints (the last week of the semester), there is no post-class quiz for Chapter 7, which is presented last for pedagogical reasons.    
+
+---
+
+# COURSE GRADING 
+
+## Breakdown by Assignment
+
+Final grades will be assigned at the end of the semester on the basis of the total number of points earned out of a possible `r N` points, based on the following components:  
+
+
+| Component | Points per Component | Number of Components | Total Points | % |
+|-------------:|:--------------------:|:--------------------:|:------------:|:----:|
+| Exam 1 (Part 1) | `r A1` | `r B1` | `r A1*B1` | `r paste0(round(((A1*B1)/N)*100,0),"%")` |
+| Exam 2 (Part 2) | `r A2` | `r B2` | `r A2*B2` | `r paste0(round(((A2*B2)/N)*100,0),"%")` |
+| Exam 3 (Part 3) | `r A3` | `r B3` | `r A3*B3` | `r paste0(round(((A3*B3)/N)*100,0),"%")` |
+| Final Exam (Part 4) | `r A4` | `r B4` | `r A4*B4` | `r paste0(round(((A4*B4)/N)*100,0),"%")` |
+| Easier *Learning Curve* Quizzes (Chs 1-15; 17-20) | `r C` | `r D` | `r C*D` | `r round(((C*D)/N)*100,0)` |
+| Harder *Learning Curve* Quizzes (Chs. 21-23) | `r E` | `r G` | `r E*G` | `r round(((E*G)/N)*100,0)` |
+| Easier Post-class Quizzes (Chs 1-6; 8-15; 17-20) | `r H` | `r I` | `r H*I` | `r round((H*I/N)*100,0)` |
+| Harder Post-class Quizzes (Chs. 21-23) | `r J` | `r K` | `r J*K` | `r round((J*K/N)*100,0)` |
+|  |  | TOTALS: | `r N` | 100% |  
+
+
+## Final Letter Grades  
+
+**Below, $y$ represents any particular student's total percentage/points for the course**. Letter grades (with strict cutoffs) will be assigned as follows:   
+
+| Grade 	| A 	| B 	| C 	| D 	| F 	|
+|--------	|:------------:	|:---------------:	|:---------------:	|:---------------:	|:---------------:	|
+| Percent 	| 89.5 $\le y$ 	| 79.5 $\le y \lt$ 89.5 	| 69.5 $\le y \lt$ 79.5 	| 59.5 $\le y \lt$ 69.5 	| $y \lt$ 59.5 	|
+| Points 	| `r N*.895` $\le y$ 	| `r N*.795` $\le y \lt$ `r N*.895` 	| `r N*.695` $\le y \lt$ `r N*.795` 	| `r N*.595` $\le y \lt$ `r N*.695` 	| $y \lt$ `r N*.595` 	|
+
+---
+
+# COURSE SCHEDULE
+
+```{r}
+Schedule <- read_tsv("tables/Schedule.tsv", na="") 
+```
+
+The schedule below is very general. Exact assignments are listed in Canvas.
+
+```{r ScheduleNonHtml, results = 'asis', eval = F}
+
+pandoc.table(Schedule, style = "multiline", split.table = Inf, split.cells = c(4,7,10,20,15,13), missing = "")
+
+```
+
+<!-- For html, the code chunk below should have eval = T. For non-html (e.g., Word, pdf), the code chunk above should have eval = T. Only one -->
+
+```{r ScheduleHtml, results = 'asis', eval = T}
+
+options(knitr.kable.NA = '')
+kable(Schedule,
+caption = 'Schedule by Unit/Week/Day') %>%
+pack_rows("Preliminaries", 1, 2, background = "#D6D3C4") %>%
+pack_rows("Part 1: Producing Data", 3, 8, background = "#D6D3C4") %>%
+pack_rows("Part 2: Organizing Data", 9, 15, background = "#D6D3C4") %>%
+pack_rows("Part 3: Chance", 15, 22, background = "#D6D3C4") %>%
+pack_rows("Part 4: Inference & Ethics", 23, 29, background = "#D6D3C4") %>%
+row_spec(0:0, bold = T, color = "white", background = "#500000") %>%
+row_spec(30:30, color = "black", background = "grey") %>%
+kable_styling(font_size=14, full_width = F, position = "left") %>%
+scroll_box(width = "100%", height = "600px")
+
+```
+
+$*$ The *Learning Curve Quiz* due date for a chapter is the first day that chapter appears in this column  
+$\dagger$ Starting at 12:25 pm, after class has ended  
+$\ddagger$ Due at 11:10 am, before class starts  
+$\S$ The final exam window begins on Friday, 10 December 2021 at 8:00 am, and ends on Wednesday, 15 December 2021 at 5:00 pm  
+
+---
+
+
+# COURSE MATERIALS 
+
+There is only one$^{\dagger\dagger}$ required purchase for this class, and it is online through *Macmillan* (their *Achieve* platform). Your actual reading experience will be through *VitalSource* via *Macmillan* (**Do not buy the textbook through VitalSource!!**) 
+
+$\dagger\dagger$ The one exception is just a strong suggestion that you purchase a headset with a microphone, attached or separate from the headphones. (See more below under *Hardware*)
+
+## Textbook
+
+- Moore, D. S., & Notz, W. I. (2020). *Statistics: Concepts and controversies*, 10$^{th}$ ed. Austin, TX: Macmillan Learning.
+
+## Hardware
+
+### Computer
+
+The university now requires you to personally possess the following:
+
+- a computer with access to the internet  
+- a webcam  
+
+[click here to see Texas A&M's full computer requirements](https://it.tamu.edu/services/academics-and-research/teaching-and-learning-tools/computer-requirements/)
+
+Technically, no other hardware is required for the main class. But below you will see **strong** suggestions for hardware.
+
+### Microphone & Speakers
+
+Oddly, the university does **not** seem to explicitly require a microphone or speakers. It must be implicit with the "integrated webcam." But just to be sure, I am suggesting the following since an online class, if we need to go in that direction at some point in the semester, won't work without them.
+
+- A microphone  
+- Speakers (or headphones/earbuds, etc.)^$\dagger\dagger$  
+
+$\dagger\dagger$ In fact, what works best for others hearing you properly is a headset and microphone, either included with the headset, or separate. This kind of setup means that you don't have to rely on your equipment software to filter out the sounds coming from you speakers, which doesn't always work so well. Sound quality is generally much better for you and for others if you have a headset. Gaming headsets are pretty cheap these days.
+
+## Software
+
+### Online test-taking technology
+  
+This main class requires the use of the [Respondus Lockdown Browser](https://web.respondus.com/he/lockdownbrowser/) for online exams. The webcam can be the type that's built into your computer or one that plugs in with a USB cable.
+
+Watch this [brief video](https://www.respondus.com/products/lockdown-browser/student-movie.shtml) to get a basic understanding of the *Lockdown Browser* and the webcam feature.
+
+- Download and install *Lockdown Browser* from [this link](https://download.respondus.com/lockdown/download.php?id=961615468).
+
+- Once Installed  
+  - Start *Lockdown Browser*  
+  - Log into Canvas  
+  - Navigate to the test  
+
+**Note**  
+- You won't be able to access tests with a standard web browser  
+-  If this is tried, an error message will indicate that the test requires the use of *Lockdown Browser*  
+  - Simply start *Lockdown Browser* and navigate back to the exam to continue  
+
+### Video Overview
+
+Watch this [brief video](https://www.respondus.com/products/lockdown-browser/student-movie.shtml) to get a basic understanding of *Lockdown Browser* and the webcam feature.
+
+### Download (if taking the exam on your own computer)
+
+- Download and install *Lockdown Browser* from [this link](https://download.respondus.com/lockdown/download.php?id=961615468)  
+  - Note that there is no *Respondus Lockdown Browser* for Chromebook  
+  - Please let me know if all you have is a Chromebook without access to any other kind of computer  
+
+###  Once Installed
+- Start *Lockdown Browser*  
+- Log into *Canvas*  
+- Navigate to the test  
+
+**Note**  
+- You won't be able to access tests with a standard web browser  
+-  If this is tried, an error message will indicate that the test requires the use of *Lockdown Browser*  
+  - Simply start *Lockdown Browser* and navigate back to the exam to continue  
+
+### Guidelines
+
+- When taking an online test, follow these guidelines:  
+  - Ensure you're in a location where you won't be interrupted  
+  - Turn off all other devices (e.g. tablets, phones, second computers) and place them outside of your reach   
+  - Before starting the test, know how much time is available for it, and also that you've allotted sufficient time to complete it  
+  - Clear your desk or workspace of all external materials not permitted - books, papers, other devices  
+  - Remain at your computer for the duration of the test  
+  - If the computer, Wi-Fi, or location is different than what was used previously with the "Webcam Check" and "System & Network Check" in Lockdown Browser, run the checks again prior to the exam  
+  - To produce a good webcam video, do the following:  
+    - Avoid wearing baseball caps or hats with brims  
+    - Ensure your computer or device is on a firm surface (a desk or table)  
+    - Do NOT have the computer on your lap, a bed, or other surface where the device (or you) are likely to move  
+    - If using a built-in webcam, avoid readjusting the tilt of the screen after the webcam setup is complete  
+    - Take the exam in a well-lit room, but avoid backlighting (such as sitting with your back to a window)  
+- Remember that *Lockdown Browser* will prevent you from accessing other websites or applications  
+  - You will be unable to exit the test until all questions are completed and submitted  
+ 
+#### Help
+
+- Several resources are available if you encounter problems with Lockdown Browser:  
+  - The Windows and Mac versions of *Lockdown Browser* have a "Help Center" button located on the toolbar  
+    - Use the "System & Network Check" to troubleshoot issues  
+    - If an exam requires you to use a webcam, also run the "Webcam Check" from this area  
+  - You can get support from Texas A&M through [this link](https://ai.tamu.edu/Help-Support/Technical-Support)  
+  - Respondus has a [Knowledge Base](https://support.respondus.com/support/)  
+    - Select the "Knowledge Base" link and then select "Respondus Lockdown Browser" as the product  
+      - If your problem is with a webcam, select "Respondus Monitor" as your product  
+    - If you're still unable to resolve a technical issue with Lockdown Browser, go to support.respondus.com and select "Submit a Ticket"  
+      - Provide detailed information about your problem and what steps you took to resolve it  
+ 
+ 
+---
+
+
+# COURSE POLICIES  
+
+## Classroom Policies 
+
+### Classroom Behavior   
+
+*PSYC 245* is a learning community where civility and mutual respect are crucial for success. I will **prepare informative, interesting lectures and do my best to deliver them that way.** I will treat you like mature members of a learning community. Likewise, I expect that you will **attend virtual class meetings, having completed the readings beforehand, and therefore prepared to both learn and contribute to the course in a thoughtful manner.** Let’s be nice to each other and have a great semester!
+
+### Assigned seating
+
+Due to the need for contact-tracing in the case of students or faculty contracting Covid-19, the university has encouraged professors to implement assigned seating, which will make the process much easier.
+
+We will figure this out on the first day of class.
+
+### Grade Disputes  
+
+If you wish to dispute a grade on an assignment or exam, you must submit a written rationale (email is fine) to justify the change **within 1 week of receiving your score in Canvas** for that exam or activity, respectively.
+
+### Cheating in this class
+
+(adapted from wording provided by Drs. Duane and Tilly McVay)  
+
+#### What constitutes academic misconduct?
+
+- ***During*** an examination: ...   
+  - ... looking at another student’s work or using external aids (for example, books, notes, conversation with others, internet resources, etc.) unless specifically allowed in advance by instructor  
+  - ... acquiring answers for any assigned work or examination from any unauthorized source, including obtaining information from students who have previously taken the examination or quiz$^{\dagger\dagger}$   
+  - ... knowingly allowing another student to copy your work  
+  
+$\dagger\dagger$ I do ***not*** consider it cheating on *Learning Curve* or *Post-Class Quizzes* when you look up outside sources. You can use whatever you can find to answer those questions (though the textbook should suffice).  
+
+#### Reporting an academic violation – What happens?
+
+- I will report the violation to [AHSO](https://aggiehonor.tamu.edu/), regardless of the magnitude of the violation  
+- The report is submitted online and includes the following:  
+  1. the details of the violation$^{\dagger\dagger}$  
+  2. an election to handle autonomously or refer to the Honor Council  
+  3. specification of sanctions, and  
+  4. student acknowledgment of acceptance/ rejection of violation and/or sanction, though you have the right to appeal to the AHSO  
+  
+- Importantly, you would then be logged into the AHSO system  
+  - If there is a second violation, you will automatically go before the Honor Council  
+- I will treat students ***giving*** unauthorized help the same as students ***receiving*** help  
+  - Such cases would entail the same course sanctions and reporting to AHSO  
+$\dagger\dagger$ Note that I can use the records from the *Respondus Lockdown Browser* (or other online proctor) as evidence in my report to AHSO.  
+
+
+---
+
+
+# UNIVERSITY POLICIES 
+
+## Vaccines and Face-coverings Policy
+
+To help protect Aggieland and stop the spread of COVID-19, Texas A&M University urges students to be vaccinated and to wear masks in classrooms and all other academic facilities on campus, including labs. Doing so exemplifies the Aggie Core Values of respect, leadership, integrity, and selfless service by putting community concerns above individual preferences. COVID-19 vaccines and masking — regardless of vaccination status — have been shown to be safe and effective at reducing spread to others, infection, hospitalization, and death.
+
+## Attendance Policy
+
+The university views class attendance and participation as an individual student responsibility. Students are expected to attend class and to complete all assignments. 
+
+Please refer to [Student Rule 7](https://student-rules.tamu.edu/rule07/) in its entirety for information about excused absences, including definitions, and related documentation and timelines.
+
+## Makeup Work Policy
+
+Students will be excused from attending class on the day of a graded activity or when attendance contributes to a student’s grade, for the reasons stated in Student Rule 7, or other reason deemed appropriate by the instructor. 
+
+Please refer to [Student Rule 7](https://student-rules.tamu.edu/rule07/) in its entirety for information about makeup work, including definitions, and related documentation and timelines.
+
+Absences related to Title IX of the Education Amendments of 1972 may necessitate a period of more than 30 days for make-up work, and the time frame for make-up work should be agreed upon by the student and instructor” ([Student Rule 7, Section 7.4.1](https://student-rules.tamu.edu/rule07)).
+
+“The instructor is under no obligation to provide an opportunity for the student to make up work missed because of an unexcused absence” ([Student Rule 7, Section 7.4.2](https://student-rules.tamu.edu/rule07)).
+
+Students who request an excused absence are expected to uphold the Aggie Honor Code and Student Conduct Code. (See [Student Rule 24](https://student-rules.tamu.edu/rule24/).)
+
+## Academic Integrity Statement and Policy
+
+>An Aggie does not lie, cheat or steal, or tolerate those who do.
+
+“Texas A&M University students are responsible for authenticating all work submitted to an instructor. If asked, students must be able to produce proof that the item submitted is indeed the work of that student. Students must keep appropriate records at all times. The inability to authenticate one’s work, should the instructor request it, may be sufficient grounds to initiate an academic misconduct case” ([Section 20.1.2.3, Student Rule 20](https://aggiehonor.tamu.edu/Rules-and-Procedures/Rules/Honor-System-Rules)).
+
+You can learn more about the Aggie Honor System Office Rules and Procedures, academic integrity, and your rights and responsibilities at [aggiehonor.tamu.edu](aggiehonor.tamu.edu).
+
+## Americans with Disabilities Act (ADA) Policy
+
+Texas A&M University is committed to providing equitable access to learning opportunities for all students. If you experience barriers to your education due to a disability or think you may have a disability, please contact Disability Resources in the Student Services Building or at (979) 845-1637 or visit [disability.tamu.edu](https://disability.tamu.edu/). Disabilities may include, but are not limited to attentional, learning, mental health, sensory, physical, or chronic health conditions. All students are encouraged to discuss their disability related needs with Disability Resources and their instructors as soon as possible.
+
+## Title IX and Statement on Limits to Confidentiality
+
+Texas A&M University is committed to fostering a learning environment that is safe and productive for all. University policies and federal and state laws prohibit gender-based discrimination and sexual harassment, including sexual assault, sexual exploitation, domestic violence, dating violence, and stalking.
+
+With the exception of some medical and mental health providers, all university employees (including full and part-time faculty, staff, paid graduate assistants, student workers, etc.) are Mandatory Reporters and must report to the Title IX Office if the employee experiences, observes, or becomes aware of an incident that meets the following conditions (see [University Rule 08.01.01.M1](https://rules-saps.tamu.edu/PDFs/08.01.01.M1.pdf)):
+
+- The incident is reasonably believed to be discrimination or harassment  
+-	The incident is alleged to have been committed by or against a person who, at the time of the incident, was (1) a student enrolled at the University or (2) an employee of the University  
+
+Mandatory Reporters must file a report regardless of how the information comes to their attention – including but not limited to face-to-face conversations, a written class assignment or paper, class discussion, email, text, or social media post. Although Mandatory Reporters must file a report, in most instances, you will be able to control how the report is handled, including whether or not to pursue a formal investigation. The University’s goal is to make sure you are aware of the range of options available to you and to ensure access to the resources you need.
+
+Students wishing to discuss concerns in a confidential setting are encouraged to make an appointment with [Counseling and Psychological Services](https://caps.tamu.edu) (CAPS). 
+
+Students can learn more about filing a report, accessing supportive resources, and navigating the Title IX investigation and resolution process on the University’s [Title IX webpage](https://titleix.tamu.edu/).
+
+NOTE: Faculty associated with the main campus in College Station should use this Title IX and Statement on Limits of Liability. Faculty not on the main campus should use the appropriate language and location at their site.
+
+## Statement on Mental Health and Wellness
+
+Texas A&M University recognizes that mental health and wellness are critical factors that influence a student’s academic success and overall well-being. Students are encouraged to engage in proper self-care by utilizing the resources and services available from *Counseling & Psychological Services* (CAPS). Students who need someone to talk to can call the TAMU Helpline (979-845-2700) from 4:00 p.m. to 8:00 a.m. weekdays and 24 hours on weekends. 24-hour emergency help is also available through the National Suicide Prevention Hotline (800-273-8255) or at [suicidepreventionlifeline.org](https://suicidepreventionlifeline.org/). 
+
+---
+
+# DEPARTMENT POLICIES 
+
+## Respect for Diversity
+
+To make this environment comfortable for everyone, please remember that there are many students with different experiences and needs in one room. This class does not tolerate remarks that are sexist, racist, homophobic, or otherwise ridicule people.
+
+**Respectful environment**: There are a number of topics during the semester that can make some people uncomfortable. To make this environment comfortable for everyone, please remember that there are many students with different experiences and needs in one room and these diverse experiences and backgrounds are not always obvious to the casual observer. Whereas it is 100% OK to disagree with someone, you must state your disagreements about the issue (and not the other person) and in a way that is respectful (i.e., does not belittle people or groups). This class does not tolerate remarks that are sexist, racist, homophobic, or otherwise ridicule people.  
+
+---
+
+# DETAILS ON STUDENT HOURS
+
+Times: Every week on Wednesday, until Dec 8, 2021, from 8:45-10:45 am$^{\dagger\dagger}$ 
+
+[Join Student Hours on Zoom](https://tamu.zoom.us/j/94664384178?pwd=YVhpK3VxaEVkNnFEak41SllHVStDUT09
+)  
+
+$\dagger\dagger$ Exceptions are as follows:
+
+- week of 6-10 September  
+  - *Student Hours* on Monday, 6 September, from 10am-12pm  
+- week of 4-8 October  
+  - *Student Hours* on Monday, 4 October, from 10am-12pm  
+
+Meeting ID: 979 4862 8196  
+Passcode: 830339 One tap mobile  
++13462487799,,97948628196# US (Houston)  
++12532158782,,97948628196# US (Tacoma)  
+
+Dial by your location  
++1 346 248 7799 US (Houston)  
++1 253 215 8782 US (Tacoma)  
++1 669 900 6833 US (San Jose)  
++1 301 715 8592 US (Washington DC)  
++1 312 626 6799 US (Chicago)  
++1 929 436 2866 US (New York)  
+877 853 5247 US Toll-free  
+888 788 0099 US Toll-free  
+Meeting ID: 979 4862 8196  
+[Find your local number](https://tamu.zoom.us/u/abcK2FjmXR)  
+
+Join by SIP  
+97948628196@zoomcrc.com  
+
+Join by H.323  
+162.255.37.11 (US West)  
+162.255.36.11 (US East)  
+115.114.131.7 (India Mumbai)  
+115.114.115.7 (India Hyderabad)  
+213.19.144.110 (Amsterdam Netherlands)  
+213.244.140.110 (Germany)  
+103.122.166.55 (Australia Sydney)  
+103.122.167.55 (Australia Melbourne)  
+149.137.40.110 (Singapore)  
+64.211.144.160 (Brazil)  
+69.174.57.160 (Canada Toronto)  
+65.39.152.160 (Canada Vancouver)  
+207.226.132.110 (Japan Tokyo)  
+149.137.24.110 (Japan Osaka)  
+Meeting ID: 979 4862 8196  
+Passcode: 830339  
+[Join by Skype for Business](https://tamu.zoom.us/skype/97948628196)  
