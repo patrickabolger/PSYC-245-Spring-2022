@@ -45,7 +45,7 @@ pacman::p_load(dplyr, knitr, magrittr, kableExtra, readr, tibble, tidyr, pander)
 ```
 
 
-# COURSE OVERVIEW {#Overview}
+# Course Overview {#Overview}
 
 <!-- Course Info -->
 
@@ -101,10 +101,7 @@ pandoc.table(LeaderInfo, style = "multiline", split.table = Inf, missing = "")
 
 ```
 
-
-$\dagger$ Exceptions are during the week of 6-10 September, when Dr. Bolger will hold office hours on Monday, 6 September, from 10am-12pm, and during the week of 4-8 October, when he will also hold office hours on Monday, 4 October, from 10am-12pm.
-
-$\dagger\dagger$ See the end of this syllabus for more information on online student hours
+$\dagger$ See the end of this syllabus for more information on online student hours
 
 ```{r CoursePoints}
 
@@ -152,9 +149,13 @@ R <- sum((C*D),(E*G),(H*I),(J*K)) # Reading quizzes
 
 ```
 
+<br/>
+
 ---
 
-# COURSE DETAILS 
+<br/>
+
+# Course Details 
 
 ## Description
 
@@ -166,9 +167,17 @@ As such, it may be one of the most useful general-purpose classes that you take 
 
 Thus, the goal here is to advance your capabilities as critical consumers of data in this class, resulting in students ultimately who not only can "defend themselves" against quantitative chicanery, but also are ready to start analyzing data in a more formal way (via mathematics) in *PSYC 301* (*Elementary Statistics for Psychology*), as well as its subsequent counterpart, *PSYC 302* (*Experimental Psychology*).
 
-## Meetings
+## Meetings (MWF)
 
-Tuesdays and Thursdays from 11:10 am to 12:25 pm in CHEM 100. 
+### Section 501
+
+- Time: 10:20 to 11:10 am  
+- Location: Psychology 338  
+
+### Section 500
+
+- Time: 12:40 to 1:30 pm  
+- Location: Psychology 108
 
 There is no credit for attendance in this class at any point, and the class lectures will be made available synchronously and asynchronously for students who may have to quarantine or who are otherwise indisposed.
 
@@ -271,13 +280,17 @@ Many of the issues covered in this textbook (and therefore in this class) are cu
  
 This brings us to the final learning outcome, `LO21`: **Consider different points of view**. Working together with your fellow students and understanding their point of view will be an integral part of this course By the end of it, you should have a stronger grasp of the validity of differing opinions and how to agree or even agree to disagree politely. 
 
+<br/>
+
 ---
 
-# COURSE TASKS
+<br/>
+
+# Course Tasks
 
 ## Exams
 
-There will be `r sum(B1,B2,B3,B4)` exams. They increase in points as the semester progresses. Exam 1 is worth `r A1` points; Exam 2 is worth `r A2` points; Exam 3 is worth `r A3` points, and the final exam is worth `r A4` points. These sum to `r A_sum` points, or `r paste0(round((A_sum/N)*100,0),"%")` of your total grade). 
+There will be `r sum(B1,B2,B3,B4)` exams. They increase in points as the semester progresses. *Exam 1* is worth `r A1` points; *Exam 2* is worth `r A2` points; *Exam 3* is worth `r A3` points, and the *Final Exam* is worth `r A4` points. These sum to `r A_sum` points, or `r paste0(round((A_sum/N)*100,0),"%")` of your total grade). 
 
 Exams will consist of multiple-choice questions, but sometimes calculations are necessary.
 
@@ -288,9 +301,9 @@ The *Respondus Lockdown Browser* is a browser that shuts down all your other app
   - verify your student ID$^{\dagger\dagger}$  
   - record the exam with your webcam  
 
-The first three exams will be due within 1 class meeting of the end of the respective unit. The final exam has a specific date.  
+The first three exams will be due within 1 class meeting of the end of the respective unit. The final exam window spans the entire period set out for final exams by the university. 
 
-The first three exams will have a 1-hour limit, once started in the *Lockdown Browser*. The final exam will have a 2.5-hour limit. 
+Unless you have an accommodation, the first three exams will have a 1-hour limit, once started in the *Lockdown Browser*. The *Final Exam* will have a 2-hour limit. 
 
 $\dagger\dagger$ If you do not have access to your student ID for whatever reason, you can log in to the *Howdy Portal* and click on the ***My Profile*** tile. In the top right corner, you will see you ***Aggie Card photo*** along with your full ***name*** and ***UIN***. You can take a screenshot of this display with your smart phone or print it out in order to present for online classes and exams. 
 
@@ -304,7 +317,7 @@ The last `r G`, however, are conceptually harder and are worth `r E` points.
 
 All together, these sum to `r (C*D)+(E*G)` points, or `r paste0(round((sum((C*D),(E*G))/N)*100,0),"%")` of your total grade). 
 
-*Learning Curve* quizzes must be completed **before the relevant class starts**. See the schedule in Canvas for details.
+*Learning Curve* quizzes must be completed **before the relevant class starts**. See the schedule in *Canvas* for details.
 
 *Learning Curve* quizzes are scored in an interesting way. If you provide incorrect answers, *Achieve* just makes you answer more questions, so it takes longer. But once you get to the target, you get full credit. If you don't reach the full target, you get no credit. It's low-stakes, but it's all or nothing.
 
@@ -330,9 +343,13 @@ There is no time limit to completing these other than the deadline. You can subm
 $\dagger\dagger$ We are not covering Chapter 16 (which concerns the *Consumer Price Index* because it is too far afield from psychological and brain sciences)
 $\dagger\dagger\dagger$ Due to time constraints (the last week of the semester), there is no post-class quiz for Chapter 7, which is presented last for pedagogical reasons.    
 
+<br/>
+
 ---
 
-# COURSE GRADING 
+<br/>
+
+# Course Grading
 
 ## Breakdown by Assignment
 
@@ -341,10 +358,10 @@ Final grades will be assigned at the end of the semester on the basis of the tot
 
 | Component | Points per Component | Number of Components | Total Points | % |
 |-------------:|:--------------------:|:--------------------:|:------------:|:----:|
-| Exam 1 (Part 1) | `r A1` | `r B1` | `r A1*B1` | `r paste0(round(((A1*B1)/N)*100,0),"%")` |
-| Exam 2 (Part 2) | `r A2` | `r B2` | `r A2*B2` | `r paste0(round(((A2*B2)/N)*100,0),"%")` |
-| Exam 3 (Part 3) | `r A3` | `r B3` | `r A3*B3` | `r paste0(round(((A3*B3)/N)*100,0),"%")` |
-| Final Exam (Part 4) | `r A4` | `r B4` | `r A4*B4` | `r paste0(round(((A4*B4)/N)*100,0),"%")` |
+| Exam 1 (Part I, less Ch. 7) | `r A1` | `r B1` | `r A1*B1` | `r paste0(round(((A1*B1)/N)*100,0),"%")` |
+| Exam 2 (Part II) | `r A2` | `r B2` | `r A2*B2` | `r paste0(round(((A2*B2)/N)*100,0),"%")` |
+| Exam 3 (Part III) | `r A3` | `r B3` | `r A3*B3` | `r paste0(round(((A3*B3)/N)*100,0),"%")` |
+| Final Exam (Part IV, plus Ch. 7) | `r A4` | `r B4` | `r A4*B4` | `r paste0(round(((A4*B4)/N)*100,0),"%")` |
 | Easier *Learning Curve* Quizzes (Chs 1-15; 17-20) | `r C` | `r D` | `r C*D` | `r round(((C*D)/N)*100,0)` |
 | Harder *Learning Curve* Quizzes (Chs. 21-23) | `r E` | `r G` | `r E*G` | `r round(((E*G)/N)*100,0)` |
 | Easier Post-class Quizzes (Chs 1-6; 8-15; 17-20) | `r H` | `r I` | `r H*I` | `r round((H*I/N)*100,0)` |
@@ -361,9 +378,13 @@ Final grades will be assigned at the end of the semester on the basis of the tot
 | Percent 	| 89.5 $\le y$ 	| 79.5 $\le y \lt$ 89.5 	| 69.5 $\le y \lt$ 79.5 	| 59.5 $\le y \lt$ 69.5 	| $y \lt$ 59.5 	|
 | Points 	| `r N*.895` $\le y$ 	| `r N*.795` $\le y \lt$ `r N*.895` 	| `r N*.695` $\le y \lt$ `r N*.795` 	| `r N*.595` $\le y \lt$ `r N*.695` 	| $y \lt$ `r N*.595` 	|
 
+<br/>
+
 ---
 
-# COURSE SCHEDULE
+<br/>
+
+# Course Schedule
 
 ```{r}
 Schedule <- read_tsv("tables/Schedule.tsv", na="") 
@@ -373,7 +394,11 @@ The schedule below is very general. Exact assignments are listed in Canvas.
 
 ```{r ScheduleNonHtml, results = 'asis', eval = F}
 
-pandoc.table(Schedule, style = "multiline", split.table = Inf, split.cells = c(4,7,10,20,15,13), missing = "")
+pandoc.table(Schedule, 
+             style = "multiline", 
+             split.table = Inf,
+             split.cells=c(4,7,10,20,15,13),
+             missing = "")
 
 ```
 
@@ -385,26 +410,30 @@ options(knitr.kable.NA = '')
 kable(Schedule,
 caption = 'Schedule by Unit/Week/Day') %>%
 pack_rows("Preliminaries", 1, 2, background = "#D6D3C4") %>%
-pack_rows("Part 1: Producing Data", 3, 8, background = "#D6D3C4") %>%
-pack_rows("Part 2: Organizing Data", 9, 15, background = "#D6D3C4") %>%
-pack_rows("Part 3: Chance", 15, 22, background = "#D6D3C4") %>%
-pack_rows("Part 4: Inference & Ethics", 23, 29, background = "#D6D3C4") %>%
+pack_rows("Part 1: Producing Data", 3, 11, background = "#D6D3C4") %>%
+pack_rows("Part 2: Organizing Data", 12, 23, background = "#D6D3C4") %>%
+pack_rows("Spring Break", 24, 26, background = "grey") %>%
+pack_rows("Part 3: Chance", 27, 35, background = "#D6D3C4") %>%
+pack_rows("Part 4: Inference, & Ch 7: Ethics", 36, 46, background = "#D6D3C4") %>%
+pack_rows("Final Exam Week", 47, 48, background = "#D6D3C4") %>%
 row_spec(0:0, bold = T, color = "white", background = "#500000") %>%
-row_spec(30:30, color = "black", background = "grey") %>%
 kable_styling(font_size=14, full_width = F, position = "left") %>%
 scroll_box(width = "100%", height = "600px")
 
 ```
 
 $*$ The *Learning Curve Quiz* due date for a chapter is the first day that chapter appears in this column  
-$\dagger$ Starting at 12:25 pm, after class has ended  
-$\ddagger$ Due at 11:10 am, before class starts  
-$\S$ The final exam window begins on Friday, 10 December 2021 at 8:00 am, and ends on Wednesday, 15 December 2021 at 5:00 pm  
+$\dagger$ Starting at 1:30 pm, after the last class (section 500) has ended  
+$\ddagger$ Due at 10:20 am, before the first class (section 501) starts  
+$\S$ The final exam window begins on Thursday, 5 May 2022 at 8:00 am, and ends on Tuesday, 10 May 2022 at 4:30 pm  
+
+<br/>
 
 ---
 
+<br/>
 
-# COURSE MATERIALS 
+# Course Materials
 
 There is only one$^{\dagger\dagger}$ required purchase for this class, and it is online through *Macmillan* (their *Achieve* platform). Your actual reading experience will be through *VitalSource* via *Macmillan* (**Do not buy the textbook through VitalSource!!**) 
 
@@ -507,23 +536,19 @@ Watch this [brief video](https://www.respondus.com/products/lockdown-browser/stu
     - If you're still unable to resolve a technical issue with Lockdown Browser, go to support.respondus.com and select "Submit a Ticket"  
       - Provide detailed information about your problem and what steps you took to resolve it  
  
- 
+<br/>
+
 ---
 
+<br/>
 
-# COURSE POLICIES  
+# Course Policies 
 
 ## Classroom Policies 
 
 ### Classroom Behavior   
 
 *PSYC 245* is a learning community where civility and mutual respect are crucial for success. I will **prepare informative, interesting lectures and do my best to deliver them that way.** I will treat you like mature members of a learning community. Likewise, I expect that you will **attend virtual class meetings, having completed the readings beforehand, and therefore prepared to both learn and contribute to the course in a thoughtful manner.** Let’s be nice to each other and have a great semester!
-
-### Assigned seating
-
-Due to the need for contact-tracing in the case of students or faculty contracting Covid-19, the university has encouraged professors to implement assigned seating, which will make the process much easier.
-
-We will figure this out on the first day of class.
 
 ### Grade Disputes  
 
@@ -557,13 +582,15 @@ $\dagger\dagger$ I do ***not*** consider it cheating on *Learning Curve* or *Pos
   - Such cases would entail the same course sanctions and reporting to AHSO  
 $\dagger\dagger$ Note that I can use the records from the *Respondus Lockdown Browser* (or other online proctor) as evidence in my report to AHSO.  
 
+<br/>
 
 ---
 
+<br/>
 
-# UNIVERSITY POLICIES 
+# University Policies 
 
-## Vaccines and Face-coverings Policy
+## Vaccines and Face-coverings
 
 To help protect Aggieland and stop the spread of COVID-19, Texas A&M University urges students to be vaccinated and to wear masks in classrooms and all other academic facilities on campus, including labs. Doing so exemplifies the Aggie Core Values of respect, leadership, integrity, and selfless service by putting community concerns above individual preferences. COVID-19 vaccines and masking — regardless of vaccination status — have been shown to be safe and effective at reducing spread to others, infection, hospitalization, and death.
 
@@ -618,9 +645,13 @@ NOTE: Faculty associated with the main campus in College Station should use this
 
 Texas A&M University recognizes that mental health and wellness are critical factors that influence a student’s academic success and overall well-being. Students are encouraged to engage in proper self-care by utilizing the resources and services available from *Counseling & Psychological Services* (CAPS). Students who need someone to talk to can call the TAMU Helpline (979-845-2700) from 4:00 p.m. to 8:00 a.m. weekdays and 24 hours on weekends. 24-hour emergency help is also available through the National Suicide Prevention Hotline (800-273-8255) or at [suicidepreventionlifeline.org](https://suicidepreventionlifeline.org/). 
 
+<br/>
+
 ---
 
-# DEPARTMENT POLICIES 
+<br/>
+
+# Department Policies 
 
 ## Respect for Diversity
 
@@ -630,55 +661,10 @@ To make this environment comfortable for everyone, please remember that there ar
 
 ---
 
-# DETAILS ON STUDENT HOURS
+# Details on Student Hours
 
-Times: Every week on Wednesday, until Dec 8, 2021, from 8:45-10:45 am$^{\dagger\dagger}$ 
+Times: Every week on Mondays and Wednesdays, until May 4, 2022, from 9:00-10:00 am$^{\dagger\dagger}$ 
 
-[Join Student Hours on Zoom](https://tamu.zoom.us/j/94664384178?pwd=YVhpK3VxaEVkNnFEak41SllHVStDUT09
-)  
+[Join Student Hours on Zoom](https://tamu.zoom.us/j/94103132529)  
 
-$\dagger\dagger$ Exceptions are as follows:
-
-- week of 6-10 September  
-  - *Student Hours* on Monday, 6 September, from 10am-12pm  
-- week of 4-8 October  
-  - *Student Hours* on Monday, 4 October, from 10am-12pm  
-
-Meeting ID: 979 4862 8196  
-Passcode: 830339 One tap mobile  
-+13462487799,,97948628196# US (Houston)  
-+12532158782,,97948628196# US (Tacoma)  
-
-Dial by your location  
-+1 346 248 7799 US (Houston)  
-+1 253 215 8782 US (Tacoma)  
-+1 669 900 6833 US (San Jose)  
-+1 301 715 8592 US (Washington DC)  
-+1 312 626 6799 US (Chicago)  
-+1 929 436 2866 US (New York)  
-877 853 5247 US Toll-free  
-888 788 0099 US Toll-free  
-Meeting ID: 979 4862 8196  
-[Find your local number](https://tamu.zoom.us/u/abcK2FjmXR)  
-
-Join by SIP  
-97948628196@zoomcrc.com  
-
-Join by H.323  
-162.255.37.11 (US West)  
-162.255.36.11 (US East)  
-115.114.131.7 (India Mumbai)  
-115.114.115.7 (India Hyderabad)  
-213.19.144.110 (Amsterdam Netherlands)  
-213.244.140.110 (Germany)  
-103.122.166.55 (Australia Sydney)  
-103.122.167.55 (Australia Melbourne)  
-149.137.40.110 (Singapore)  
-64.211.144.160 (Brazil)  
-69.174.57.160 (Canada Toronto)  
-65.39.152.160 (Canada Vancouver)  
-207.226.132.110 (Japan Tokyo)  
-149.137.24.110 (Japan Osaka)  
-Meeting ID: 979 4862 8196  
-Passcode: 830339  
-[Join by Skype for Business](https://tamu.zoom.us/skype/97948628196)  
+- Zoom Meeting ID: `941 0313 2529`
