@@ -1,9 +1,9 @@
 ---
 title: |
   ![](images/TAM-PrimaryMarkA.png){width=75%}  
-  Syllabus for PSYC 245:
+  Syllabus for PSYC 245 (Spring 2022):
 subtitle: |
- Introduction to Psychological Science Methods (Spring 2022)
+ Introduction to Psychological Science Methods (sections 500 & 501)
 knit: (function(input_file, encoding) {
   out_dir <- 'docs';
   rmarkdown::render(input_file,
@@ -18,9 +18,9 @@ output:
 <!-- --- -->
 <!-- title: | -->
 <!--   ![](images/TAM-PrimaryMarkA.png){width=75%}   -->
-<!--   Syllabus for PSYC 245: -->
+<!--   Syllabus for PSYC 245 (sections 500 & 501): -->
 <!-- subtitle: | -->
-<!--  Introduction to Psychological Science Methods (Fall 2021) -->
+<!--  Introduction to Psychological Science Methods (Spring 2022) -->
 <!-- output:  -->
 <!--   word_document: default -->
 <!--   html_document: -->
@@ -159,7 +159,7 @@ R <- sum((C*D),(E*G),(H*I),(J*K)) # Reading quizzes
 
 ## Description
 
-This course is the **first** of three course in the *Psychological & Brain Sciences* major that explain how psychological science is carried out. Psychological science is an extraordinarily diverse, academic field, where researchers collect data ranging from reaction times, to brainwaves, to eye movements, to survey/polling data, to biochemical reactions, to the sheer counting of behaviors or even words on the internet (and more!). 
+This course is the **first** of three courses in the *Psychological & Brain Sciences* major that explain how psychological science is carried out. Psychological science is an extraordinarily diverse, academic field, where researchers collect data ranging from reaction times, to brainwaves, to eye movements, to survey/polling data, to biochemical reactions, to the sheer counting of behaviors or even words on the internet (and more!). 
 
 To get a broad-based education in psychological science then, you need to get used to thinking critically about data. The main focus in this introductory course, therefore, is an overview of the general data-collection and data-analysis processes in the social sciences and psychology, but without emphasizing very much math, per se (though there will be a little bit of math). 
 
