@@ -171,13 +171,11 @@ Thus, the goal here is to advance your capabilities as critical consumers of dat
 
 ### Section 501
 
-- Time: 10:20 to 11:10 am  
-- Location: Psychology 338  
+- 10:20 to 11:10 am in Psychology 338  
 
 ### Section 500
 
-- Time: 12:40 to 1:30 pm  
-- Location: Psychology 108
+- 12:40 to 1:30 pm in Psychology 108
 
 There is no credit for attendance in this class at any point, and the class lectures will be made available synchronously and asynchronously for students who may have to quarantine or who are otherwise indisposed.
 
@@ -313,7 +311,7 @@ There will be `r D+G` *Learning Curve* quizzes.
 
 The Learning Curves for the first `r D` (Chapters 1-15 & 17-20)$^{\dagger\dagger}$ are relatively easy, each being worth `r C` points. 
 
-The last `r G`, however, are conceptually harder and are worth `r E` points. 
+The last `r G`, however, are a bit harder conceptually and are worth `r E` points. 
 
 All together, these sum to `r (C*D)+(E*G)` points, or `r paste0(round((sum((C*D),(E*G))/N)*100,0),"%")` of your total grade). 
 
@@ -331,10 +329,10 @@ There will be `r I+K` Post-Class quizzes.
 
 *Almost* exactly parallel to the *Learning Curve* quizzes, the first `r I` (Chapters 1-15 & 17-20)$^{\dagger\dagger}$ are relatively easy, each being worth `r H` points. 
 
-The last `r K` (Chapters 21-23),$^{\dagger\dagger\dagger}$ however, are conceptually harder and are worth `r J`. 
-All together, these sum to `r (H*I)+(J*K)` points, or `r paste0(round((sum((H*I),(J*K))/N)*100,0),"%")` of your total grade). 
+The last `r K` (Chapters 21-23),$^{\dagger\dagger\dagger}$ however, are conceptually a bit harder and are worth `r J`. 
+Together, these sum to `r (H*I)+(J*K)` points, or `r paste0(round((sum((H*I),(J*K))/N)*100,0),"%")` of your total grade). 
 
-*Post-Class quizzes* quizzes must be completed **within one week** of the end of the relevant class. See the schedule in Canvas for details.
+*Post-Class quizzes* quizzes must be completed **within one week** of the end of the relevant class. See the schedule in*Canvas* for details.
 
 The post-class quizzes are scored differently than the *Learning Curve* quizzes. Specifically, they are not "all or nothing." Rather, they are penalized. So if you answer the question wrong, you can re-take the question, but you lose 20% of the value of the question. After 5 mistakes, it's worth zero points (penalized 100%). There are multiple questions. On most of the post-class quizzes, there are around 10-15 questions.
 
@@ -390,7 +388,7 @@ Final grades will be assigned at the end of the semester on the basis of the tot
 Schedule <- read_tsv("tables/Schedule.tsv", na="") 
 ```
 
-The schedule below is very general. Exact assignments are listed in Canvas.
+The schedule below is very general. Exact assignments are listed in*Canvas*.
 
 ```{r ScheduleNonHtml, results = 'asis', eval = F}
 
@@ -425,7 +423,9 @@ scroll_box(width = "100%", height = "600px")
 $*$ The *Learning Curve Quiz* due date for a chapter is the first day that chapter appears in this column  
 $\dagger$ Starting at 1:30 pm, after the last class (section 500) has ended  
 $\ddagger$ Due at 10:20 am, before the first class (section 501) starts  
-$\S$ The final exam window begins on Thursday, 5 May 2022 at 8:00 am, and ends on Tuesday, 10 May 2022 at 4:30 pm  
+$\S$ There is no *Post-class Quiz* for Chapter 7 (time constraints)  
+$||$ The window to complete the Chapter 23 *Post-class Quiz* is shorter than usual, beginning at the end of class on Friday, and ending at 11:59 pm on Tuesday, the last day of classes.  
+$**$ The final-exam window begins on Thursday, 5 May 2022 at 8:00 am, and ends on Tuesday, 10 May 2022 at 4:30 pm
 
 <br/>
 
@@ -477,7 +477,7 @@ Watch this [brief video](https://www.respondus.com/products/lockdown-browser/stu
 
 - Once Installed  
   - Start *Lockdown Browser*  
-  - Log into Canvas  
+  - Log into*Canvas*  
   - Navigate to the test  
 
 **Note**  
