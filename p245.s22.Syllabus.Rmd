@@ -86,7 +86,7 @@ pandoc.table(CourseInfo, style = "multiline", split.table = Inf, missing = "")
 LeaderInfo %>% 
   kbl(caption = "People") %>%
   pack_rows("Main Instructor", 1, 1, background = "#D6D3C4") %>%
-  pack_rows("Undergraduate Teaching Scholar", 2, 2, background = "#D6D3C4") %>%
+  pack_rows("Undergraduate Teaching Scholars", 2, 3, background = "#D6D3C4") %>%
   row_spec(0:0, bold = T, color = "white", background = "#500000") %>%
   kable_styling(bootstrap_options = "responsive", font_size=14, full_width = F, position = "left")
 
@@ -101,7 +101,8 @@ pandoc.table(LeaderInfo, style = "multiline", split.table = Inf, missing = "")
 
 ```
 
-$\dagger$ See the end of this syllabus for more information on online student hours
+$\dagger$ Online only on *Zoom*. See the end of this syllabus for more information on online student hours  
+$\ddagger$ [UGATS = Undergraduate Teaching Scholar](https://liberalarts.tamu.edu/psychology/undergraduate/academics/teaching-scholars-program/)  
 
 ```{r CoursePoints}
 
