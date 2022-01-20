@@ -33,8 +33,8 @@ output:
 ```{r setup, include=F}
 knitr::opts_chunk$set(
 	echo = F,
-	message = FALSE,
-	warning = FALSE,
+	message = F,
+	warning = F,
 	comment = NA
 )
 ```
@@ -102,11 +102,9 @@ pandoc.table(LeaderInfo, style = "multiline", split.table = Inf, missing = "")
 ```
 
 $\dagger$ Online only on *Zoom*. See the end of this syllabus for more information on online student hours  
-$\ddagger$ [UGATS = Undergraduate Teaching Scholar](https://liberalarts.tamu.edu/psychology/undergraduate/academics/teaching-scholars-program/)  
+$\ddagger$ [UGTS = Undergraduate Teaching Scholar](https://liberalarts.tamu.edu/psychology/undergraduate/academics/teaching-scholars-program/)  
 
 ```{r CoursePoints}
-
-## THESE NEED TO BE CHANGED
 
 # Exam 1
 A1 <- 120 # Points per exam
@@ -178,15 +176,13 @@ Thus, the goal here is to advance your capabilities as critical consumers of dat
 
 - 12:40 to 1:30 pm in Psychology 108
 
-There is no credit for attendance in this class at any point, and the class lectures will be made available synchronously and asynchronously for students who may have to quarantine or who are otherwise indisposed.
+There is no credit for attendance in this class at any point, nor are there any points for any in-class activities. Furthermore, the class lectures will be made available synchronously and asynchronously for students who may have to quarantine or who are otherwise indisposed.
 
 Exams are also "take-home" (online).
 
 Thus, you will be able to access course content and get credit for all activities whether you are physically in the class or not.
 
 This is a face-to-face class, however. We meet in a physical space at a specific time. See above.
-
-And due to the need for contact-tracing at the University, we have been encouraged to have assigned seating. This will be figured out on the first day of class.
 
 ## Prerequisites  
 
@@ -293,7 +289,9 @@ There will be `r sum(B1,B2,B3,B4)` exams. They increase in points as the semeste
 
 Exams will consist of multiple-choice questions, but sometimes calculations are necessary.
 
-These exams will all be online through the [Respondus Lockdown Browser](https://web.respondus.com/he/lockdownbrowser/). 
+You get three attempts for each exam. But you have to be careful: There is a 12-hour waiting period between attempts. So if you want to be able to make all three attempts, you'd want to start your first attempt no later than about 28 hours before the final deadline for that exam (24 hours for the 2 waiting periods, and 3 hours 45 minutes for the attempts themselves [and this would be 30 hours for the final exam since each attempt can last up to 2 hours; see below]).
+
+These exams will all be taken online through the [Respondus Lockdown Browser](https://web.respondus.com/he/lockdownbrowser/). 
 
 The *Respondus Lockdown Browser* is a browser that shuts down all your other applications on that computer while you take exams. You need to download it. You will need to do the following during exams:  
 
@@ -302,7 +300,7 @@ The *Respondus Lockdown Browser* is a browser that shuts down all your other app
 
 The first three exams will be due within 1 class meeting of the end of the respective unit. The final exam window spans the entire period set out for final exams by the university. 
 
-Unless you have an accommodation, the first three exams will have a 1-hour limit, once started in the *Lockdown Browser*. The *Final Exam* will have a 2-hour limit. 
+Unless you have an accommodation, the first three exams will have a 1-hour, 15-minute limit (like a TTh class), once started in the *Lockdown Browser*. The *Final Exam* will have a 2-hour limit. 
 
 $\dagger\dagger$ If you do not have access to your student ID for whatever reason, you can log in to the *Howdy Portal* and click on the ***My Profile*** tile. In the top right corner, you will see you ***Aggie Card photo*** along with your full ***name*** and ***UIN***. You can take a screenshot of this display with your smart phone or print it out in order to present for online classes and exams. 
 
@@ -335,12 +333,26 @@ Together, these sum to `r (H*I)+(J*K)` points, or `r paste0(round((sum((H*I),(J*
 
 *Post-Class quizzes* quizzes must be completed **within one week** of the end of the relevant class. See the schedule in*Canvas* for details.
 
-The post-class quizzes are scored differently than the *Learning Curve* quizzes. Specifically, they are not "all or nothing." Rather, they are penalized. So if you answer the question wrong, you can re-take the question, but you lose 20% of the value of the question. After 5 mistakes, it's worth zero points (penalized 100%). There are multiple questions. On most of the post-class quizzes, there are around 10-15 questions.
+The post-class quizzes are pretty different from the *Learning Curve* quizzes. Specifically, they are not "all or nothing." You can get answers wrong. However, you get up to 5 attempts at each quiz (within the 1-week window it's available), and we take your highest score of your attempts. On most of the post-class quizzes, there are around 10-15 questions.
 
-There is no time limit to completing these other than the deadline. You can submit the quizzes late, even, but they lose 25% of their total value for each day late.
+There is no time limit to completing each attempt other than the deadline. 
 
 $\dagger\dagger$ We are not covering Chapter 16 (which concerns the *Consumer Price Index* because it is too far afield from psychological and brain sciences)
-$\dagger\dagger\dagger$ Due to time constraints (the last week of the semester), there is no post-class quiz for Chapter 7, which is presented last for pedagogical reasons.    
+$\dagger\dagger\dagger$ Due to time constraints (the last week of the semester), there is no post-class quiz for Chapter 7, which is presented last for pedagogical reasons.  
+
+## Final word on quizzes
+
+***IMPORTANT!!!***
+
+This class is set up so that getting high scores on the quizzes (both *Learning Curve* and *Post-class*) is fairly easy. In the case of the former, you just keep at it until you get full credit. In the case of the latter, you just repeat it (up to 5 times) until you get your maximum score.  
+
+***But you must keep on top of them by doing them on time!!!*** 
+
+This is the key to doing well in this class. The reason is that the exams can be fairly difficult, so the quizzes act as an anchor to passing the class. 
+
+This is the pattern I have noticed having been the main instructor for the class since its inception in Fall, 2020.
+
+You've been apprised. And it won't be the last time I apprise you.
 
 <br/>
 
@@ -422,10 +434,10 @@ scroll_box(width = "100%", height = "600px")
 ```
 
 $*$ The *Learning Curve Quiz* due date for a chapter is the first day that chapter appears in this column  
-$\dagger$ Starting at 1:30 pm, after the last class (section 500) has ended  
-$\ddagger$ Due at 10:20 am, before the first class (section 501) starts  
+$\dagger$ The window to take the exam opens when class ends for you on this day.  
+$\ddagger$ The window closes before the first class on this day    
 $\S$ There is no *Post-class Quiz* for Chapter 7 (time constraints)  
-$||$ The window to complete the Chapter 23 *Post-class Quiz* is shorter than usual, beginning at the end of class on Friday, and ending at 11:59 pm on Tuesday, the last day of classes.  
+$||$ The window to complete the Chapter 23 *Post-class Quiz* is shorter than usual, beginning at the end of class on Friday, and ending at 11:59 pm on the last day of classes.  
 $**$ The final-exam window begins on Thursday, 5 May 2022 at 8:00 am, and ends on Tuesday, 10 May 2022 at 4:30 pm
 
 <br/>
@@ -443,6 +455,8 @@ $\dagger\dagger$ The one exception is just a strong suggestion that you purchase
 ## Textbook
 
 - Moore, D. S., & Notz, W. I. (2020). *Statistics: Concepts and controversies*, 10$^{th}$ ed. Austin, TX: Macmillan Learning.
+
+Purchase this directly through *Canvas* if at all possible. The only good reason to purchase the code from the bookstore is that, apparently, some people have to purchase from the bookstore in order to satisfy scholarship and financial-aid requirements.
 
 ## Hardware
 
@@ -464,7 +478,7 @@ Oddly, the university does **not** seem to explicitly require a microphone or sp
 - A microphone  
 - Speakers (or headphones/earbuds, etc.)^$\dagger\dagger$  
 
-$\dagger\dagger$ In fact, what works best for others hearing you properly is a headset and microphone, either included with the headset, or separate. This kind of setup means that you don't have to rely on your equipment software to filter out the sounds coming from you speakers, which doesn't always work so well. Sound quality is generally much better for you and for others if you have a headset. Gaming headsets are pretty cheap these days.
+$\dagger\dagger$ In fact, what works best for others hearing you properly is a headset and microphone, either included with the headset, or separate. This kind of setup means that you don't have to rely on your equipment software to filter out (from the microphone) the sounds coming from you speakers, which doesn't always work so well. Sound quality is generally much better for you and for others if you have a headset. Gaming headsets are pretty cheap these days.
 
 ## Software
 
@@ -477,14 +491,9 @@ Watch this [brief video](https://www.respondus.com/products/lockdown-browser/stu
 - Download and install *Lockdown Browser* from [this link](https://download.respondus.com/lockdown/download.php?id=961615468).
 
 - Once Installed  
-  - Start *Lockdown Browser*  
-  - Log into*Canvas*  
-  - Navigate to the test  
-
-**Note**  
-- You won't be able to access tests with a standard web browser  
--  If this is tried, an error message will indicate that the test requires the use of *Lockdown Browser*  
-  - Simply start *Lockdown Browser* and navigate back to the exam to continue  
+  - Log into *Canvas* with your regular browser (e.g., Chrome, Safari, etc.)  
+  - Navigate to the exam  
+  - The exam will start the *Lockdown Browser* 
 
 ### Video Overview
 
@@ -495,16 +504,6 @@ Watch this [brief video](https://www.respondus.com/products/lockdown-browser/stu
 - Download and install *Lockdown Browser* from [this link](https://download.respondus.com/lockdown/download.php?id=961615468)  
   - Note that there is no *Respondus Lockdown Browser* for Chromebook  
   - Please let me know if all you have is a Chromebook without access to any other kind of computer  
-
-###  Once Installed
-- Start *Lockdown Browser*  
-- Log into *Canvas*  
-- Navigate to the test  
-
-**Note**  
-- You won't be able to access tests with a standard web browser  
--  If this is tried, an error message will indicate that the test requires the use of *Lockdown Browser*  
-  - Simply start *Lockdown Browser* and navigate back to the exam to continue  
 
 ### Guidelines
 
