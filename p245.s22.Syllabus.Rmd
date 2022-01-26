@@ -101,8 +101,7 @@ pandoc.table(LeaderInfo, style = "multiline", split.table = Inf, missing = "")
 
 ```
 
-$\dagger$ Online only on *Zoom*. See the end of this syllabus for more information on online student hours  
-$\ddagger$ [UGTS = Undergraduate Teaching Scholar](https://liberalarts.tamu.edu/psychology/undergraduate/academics/teaching-scholars-program/)  
+$\dagger$ [UGTS = Undergraduate Teaching Scholar](https://liberalarts.tamu.edu/psychology/undergraduate/academics/teaching-scholars-program/)  
 
 ```{r CoursePoints}
 
@@ -658,13 +657,3 @@ Texas A&M University recognizes that mental health and wellness are critical fac
 To make this environment comfortable for everyone, please remember that there are many students with different experiences and needs in one room. This class does not tolerate remarks that are sexist, racist, homophobic, or otherwise ridicule people.
 
 **Respectful environment**: There are a number of topics during the semester that can make some people uncomfortable. To make this environment comfortable for everyone, please remember that there are many students with different experiences and needs in one room and these diverse experiences and backgrounds are not always obvious to the casual observer. Whereas it is 100% OK to disagree with someone, you must state your disagreements about the issue (and not the other person) and in a way that is respectful (i.e., does not belittle people or groups). This class does not tolerate remarks that are sexist, racist, homophobic, or otherwise ridicule people.  
-
----
-
-# Details on Student Hours
-
-Times: Every week on Mondays and Wednesdays, until May 4, 2022, from 9:00-10:00 am$^{\dagger\dagger}$ 
-
-[Join Student Hours on Zoom](https://tamu.zoom.us/j/94103132529)  
-
-- Zoom Meeting ID: `941 0313 2529`
