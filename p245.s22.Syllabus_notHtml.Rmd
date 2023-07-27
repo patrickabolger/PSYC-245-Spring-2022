@@ -1,34 +1,28 @@
 ---
-title: |
-   ![](images/TAM-PrimaryMarkA.png){width=75%}
-Syllabus for PSYC 245 (Spring 2022):
- subtitle: |
-  Introduction to Psychological Science Methods (sections 500 & 501)
- knit: (function(input_file, encoding) {
-   out_dir <- 'docs';
-   rmarkdown::render(input_file,
-  encoding=encoding,
-  output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
- output:
-   rmdformats::downcute:
-     use_bookdown: true
+title: "![](images/TAM-PrimaryMarkA.png){width=75%}"
+Syllabus for PSYC 245 (sections 500 & 501):
+subtitle: |
+  Introduction to Psychological Science Methods (Spring 2022)
+output:
+  pdf_document: default
+  word_document: default
 ---
 
-<!-- Alternative YAML header for non-html -->
-
-<!-- --- -->
-<!-- title: | -->
-<!--   ![](images/TAM-PrimaryMarkA.png){width=75%} -->
-<!--   Syllabus for PSYC 245 (sections 500 & 501): -->
-<!-- subtitle: | -->
-<!--  Introduction to Psychological Science Methods (Spring 2022) -->
-<!-- output: -->
-<!--   word_document:  -->
-<!--     default: true -->
-<!--     always_allow_html: true -->
-
-<!-- --- -->
-
+<!-- # --- -->
+<!-- # title: | -->
+<!-- #    ![](images/TAM-PrimaryMarkA.png){width=75%} -->
+<!-- # Syllabus for PSYC 245 (Spring 2022): -->
+<!-- #  subtitle: | -->
+<!-- #   Introduction to Psychological Science Methods (sections 500 & 501) -->
+<!-- #  knit: (function(input_file, encoding) { -->
+<!-- #    out_dir <- 'docs'; -->
+<!-- #    rmarkdown::render(input_file, -->
+<!-- #   encoding=encoding, -->
+<!-- #   output_file=file.path(dirname(input_file), out_dir, 'index.html'))}) -->
+<!-- #  output: -->
+<!-- #    rmdformats::downcute: -->
+<!-- #      use_bookdown: true -->
+<!-- # --- -->
 
 <!-- Setup -->
 
@@ -58,7 +52,7 @@ LeaderInfo <- read_tsv("tables/LeaderInfo.tsv", na="")
 
 ## Course Information
 
-```{r CourseInfoHtml, eval=T}
+```{r CourseInfoHtml, eval=F}
 
 CourseInfo %>%
   kbl(caption = "Section Information for PSYC 245 taught by Dr. Patrick Bolger") %>%
@@ -71,7 +65,7 @@ CourseInfo %>%
 <!-- Only one of the code chunks above and below can be run. The one that is run should have eval=T as a code-chunk option, whereas the other should have eval=F. Above is for html only. Below is for everything else.-->
 
 
-```{r CourseInfo, results = 'asis', eval = F}
+```{r CourseInfo, results = 'asis', eval = T}
 
 pandoc.table(CourseInfo, style = "multiline", split.table = Inf, missing = "")
 
@@ -80,7 +74,7 @@ pandoc.table(CourseInfo, style = "multiline", split.table = Inf, missing = "")
 
 ## People
 
-```{r LeaderInfoHtml, eval=T}
+```{r LeaderInfoHtml, eval=F}
 
 # Removed headers unnecessary in html table
 #PeopleInfo2 <- PeopleInfo %>% select(1,4:7)
@@ -97,7 +91,7 @@ LeaderInfo %>%
 <!-- Only one of the code chunks above and below can be run. The one that is run should have eval=T as a code-chunk option, whereas the other should have eval=F. Above is for html only. Below is for everything else.-->
 
 
-```{r LeaderInfo, results = 'asis', eval = F}
+```{r LeaderInfo, results = 'asis', eval = T}
 
 pandoc.table(LeaderInfo, style = "multiline", split.table = Inf, missing = "")
 
@@ -404,7 +398,7 @@ Schedule <- read_tsv("tables/Schedule.tsv", na="")
 
 The schedule below is very general. Exact assignments are listed in*Canvas*.
 
-```{r ScheduleNonHtml, results = 'asis', eval = F}
+```{r ScheduleNonHtml, results = 'asis', eval = T}
 
 pandoc.table(Schedule, 
              style = "multiline", 
@@ -416,7 +410,7 @@ pandoc.table(Schedule,
 
 <!-- For html, the code chunk below should have eval = T. For non-html (e.g., Word, pdf), the code chunk above should have eval = T. Only one -->
 
-```{r ScheduleHtml, results = 'asis', eval = T}
+```{r ScheduleHtml, results = 'asis', eval = F}
 
 options(knitr.kable.NA = '')
 kable(Schedule,
